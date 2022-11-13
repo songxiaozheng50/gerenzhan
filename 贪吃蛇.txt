@@ -1,0 +1,18 @@
+def run_game(self):
+        """ 开启游戏 """
+        global window
+        window = tk.Tk()
+        window.focus_force() # 主窗口焦点
+        window.title('Snake')
+        win_w_size = self.row_cells * self.cell_size + self.frame_x*2 + self.win_w_plus
+        win_h_size = self.col_cells * self.cell_size + self.frame_y*2
+        Snake().window_center(window,win_w_size,win_h_size)
+        txt_lable = tk.Label(window,text=
+                              "方向键移动，或者"
+                             +"\n字母键wSAD移动"
+                             +"\n（大小写均可）"
+                             +"\n"
+                             +"\n空格键暂停",
+                             font=('Yahei', 15),anchor="ne", justify="left")
+        txt_lable.place(x= self.cell_size * self.col_cells + self.cell_size*2,
+                        y= self.cell_size*6)
